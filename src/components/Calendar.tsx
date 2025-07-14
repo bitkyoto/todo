@@ -27,11 +27,14 @@ const findTasks = (
 ): TaskInterface[] => {
   const tasksStr = localStorage.getItem("tasks");
   const tasks: TaskInterface[] = tasksStr ? JSON.parse(tasksStr) : [];
-
   return tasks.filter((task) => {
     if (!task.dueDate) return false;
     const taskDate = new Date(task.dueDate);
-    return taskDate.getMonth() === month && taskDate.getDate() === day && taskDate.getFullYear() === year;
+    return (
+      taskDate.getMonth() === month &&
+      taskDate.getDate() === day &&
+      taskDate.getFullYear() === year
+    );
   });
 };
 
@@ -64,17 +67,24 @@ export const Calendar = () => {
 
     // Ячейки с днями текущего месяца
     for (let day = 1; day <= daysInMonth; day++) {
+      const tasks = findTasks(month, day, year);
+      const taskCount = tasks.length;
+
       days.push(
         <div
           key={day}
           className="w-full h-24 bg-[#8d9b74] rounded-md p-2 hover:bg-[#6b7659] transition-colors cursor-pointer box-border"
           onClick={() => {
             setIsDayModalOpen(true);
-            const tasks = findTasks(month, day, year);
             setSelectedDayTasks(tasks);
           }}
         >
           <div className="font-medium">{day}</div>
+          {taskCount > 0 && (
+            <div className="text-sm mt-1 bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center">
+              {taskCount}
+            </div>
+          )}
         </div>
       );
     }
