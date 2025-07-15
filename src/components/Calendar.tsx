@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { DayModal } from "./DayModal";
-import type { Status, TaskInterface } from "@/types/Task";
+import type { TaskInterface } from "@/types/Task";
 
 const monthNames = [
   "Январь",
