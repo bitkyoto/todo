@@ -18,8 +18,8 @@ export const TaskModal = ({
   index,
   status,
 }: TaskModalProps) => {
-  const [changedTitle, setChanedTitle] = useState(title);
-  const [changedContent, setChangedContent] = useState(content);
+  const [changedTitle, setChanedTitle] = useState<string>(title);
+  const [changedContent, setChangedContent] = useState<string>(content);
   const dispatch = useDispatch();
   return (
     <div className="fixed inset-0 z-51 flex items-center justify-center bg-gray-400/90">

@@ -13,7 +13,7 @@ interface ModalProps {
 export const Modal = ({ closeModal }: ModalProps) => {
   const [title, setTitle] = useState<string>();
   const [content, setContent] = useState<string>();
-  const [date, setDate] = React.useState<Date | undefined>(undefined);
+  const [date, setDate] = useState<Date | undefined>(undefined);
   const dispatch = useDispatch();
   const index = useSelector((state: RootState) => state.newTask.tasks.length);
 

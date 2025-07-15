@@ -39,10 +39,10 @@ const findTasks = (
 };
 
 export const Calendar = () => {
-  const [currentDate, setCurrentDate] = useState(new Date());
+  const [currentDate, setCurrentDate] = useState<Date>(new Date());
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
-  const [isDayModalOpen, setIsDayModalOpen] = useState(false);
+  const [isDayModalOpen, setIsDayModalOpen] = useState<boolean>(false);
   const [selectedDayTasks, setSelectedDayTasks] = useState<TaskInterface[]>([]);
 
   const firstDayOfMonth =

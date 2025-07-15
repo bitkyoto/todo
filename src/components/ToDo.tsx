@@ -26,8 +26,8 @@ export const ToDo = ({
   dueDate,
   type,
 }: ToDoProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isTaskModalOpen, setIsTaskModalOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [isTaskModalOpen, setIsTaskModalOpen] = useState<boolean>(false);
   const dispatch = useDispatch();
 
   const handleStatusChange = (e: React.MouseEvent) => {

@@ -13,7 +13,6 @@ const STATUS_COLORS = {
   deleted: "bg-[#ff4040]",
 } as const;
 export const DayModal = ({ closeModal, tasks }: ModalProps) => {
-  console.log(tasks);
   return (
     <div className="fixed inset-0 z-50 flex justify-center bg-gray-400/90">
       <div className="relative w-[90%] max-w-[500px] bg-white rounded-lg shadow-lg p-4 my-6 max-h-[60%]  overflow-y-auto">

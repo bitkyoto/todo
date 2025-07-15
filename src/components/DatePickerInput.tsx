@@ -9,6 +9,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useState } from "react";
 
 interface DatePickerInputProps {
   date: Date | undefined;
@@ -16,7 +17,7 @@ interface DatePickerInputProps {
 }
 
 export function DatePickerInput({ date, setDate }: DatePickerInputProps) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
     <div className="flex flex-col gap-3">
